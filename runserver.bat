@@ -1,0 +1,1 @@
+java -cp "bin;lib/OpenCV.jar;lib/core.jar;lib/jd2xx.jar;lib/jetty-6.1.14.jar;lib/jetty-util-6.1.14.jar;lib/servlet-api-2.5-6.1.14.jar" -Djava.library.path="lib;C:\Program Files\OpenCV\bin" common.DistanceServer

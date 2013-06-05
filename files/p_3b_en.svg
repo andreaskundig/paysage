@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="iso-8859-1" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN"
+"http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg onload="if(typeof(top)!='undefined'){top.setTimeout(init,5)}else{init()} " 
+xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+ <g id="firstGroup"/>
+ <script type="text/ecmascript"  xlink:href="paysage_3_en.js" />
+ <script type="text/ecmascript" xlink:href="configuration_3b_en.js" />
+</svg>

@@ -1,0 +1,1 @@
+java -cp "bin;lib/jd2xx.jar" sonar.SonarDistanceDetector

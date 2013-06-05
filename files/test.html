@@ -1,0 +1,60 @@
+  <html>
+  <head>
+    <script type="text/javascript" src="jquery-1.3.1.js"></script>
+    <script type="text/javascript">
+        function setLinkPosition(detector_name){
+            $.get(detector_name, function(data){
+                d = data.getElementsByTagName("distance")[0].firstChild.data
+                
+                $("#"+detector_name).css({"top":d,"position":"absolute"});
+                
+              });
+        }
+        
+	function setSonarLinkPosition(){
+	  setLinkPosition("sonar")
+	}
+	function setWebcamLinkPosition(){
+	  setLinkPosition("webcam")
+	}
+	function setWebcamSonarLinkPosition(){
+	  setLinkPosition("webcam_sonar")
+	}
+
+        var timer
+
+        $(document).ready(function(){
+            //conneries de compatibilité
+            if(typeof(top) != 'undefined'){
+              timer = top
+            }else{
+              timer = window  
+            }
+            
+    	   $("#sonar").click(function(event){
+    	       timer.setInterval(setSonarLinkPosition,100)
+    	       event.preventDefault();
+    	   });
+            
+    	   $("#webcam").click(function(event){
+         	timer.setInterval(setWebcamLinkPosition,100)
+    	       event.preventDefault();
+    	   });
+
+    	   $("#webcam_sonar").click(function(event){
+         	timer.setInterval(setWebcamSonarLinkPosition,100)
+    	       event.preventDefault();
+    	   });
+
+    	   
+    	 });
+    	      
+    </script>
+  </head>
+  <body>
+    <a id="sonar" href="">sonar</a>
+    <a id="webcam" href="">webcam</a>
+    <a id="webcam_sonar" href="">both</a>
+
+  </body>
+  </html>

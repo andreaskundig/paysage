@@ -1,0 +1,1 @@
+javac -classpath "bin;lib/OpenCV.jar;lib/core.jar;lib/jd2xx.jar;lib/jetty-6.1.14.jar;lib/jetty-util-6.1.14.jar;lib/servlet-api-2.5-6.1.14.jar"  -d bin -sourcepath src

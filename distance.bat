@@ -1,0 +1,1 @@
+java -cp "bin;lib/OpenCV.jar;lib/core.jar;lib/jd2xx.jar" -Djava.library.path="lib;C:\Program Files\OpenCV\bin" common.CombinedWebcamSonarDistanceDetector
