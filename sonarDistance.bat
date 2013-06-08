@@ -1,1 +1,1 @@
-java -cp "bin;lib/jd2xx.jar" sonar.SonarDistanceDetector
+java -Djava.library.path=lib -cp "bin;lib/jd2xx.jar" sonar.SonarDistanceDetector

@@ -343,12 +343,12 @@ Controls.keydown =function(evt){
 function Montreur(){
 	
     this.configure = function(configuration){
-    	this.premier_mot = configuration.premier_mot
-    	this.premier_mot.show(true)
-    	this.visible = [this.premier_mot]
+    	this.premier_mot = configuration.premier_mot;
+    	this.premier_mot.show(true);
+    	this.visible = [this.premier_mot];
     	if(configuration.visibilite){
-    	    this.visibilite = configuration.visibilite
-
+    	    this.visibilite = configuration.visibilite;
+	    this.visibilite_keys = sort_float_keys(this.visibilite);
     	}
     }
    
@@ -485,10 +485,14 @@ function Montreur(){
     
     this.find_visibilite_key_for_size  = function(size){
         var key = -1
-        for(var i in this.visibilite){if(i>=size){ key=i}}
+        for(var i in this.visibilite_keys){
+	    if(i>=size - 0.01 ){ key=i; }
+	}
         if(key == -1){
-            for(var i in this.visibilite){ key=i; break}
+            for(var i in this.visibilite_keys){ key=i; break}
         }
+	console.log("key "+ key + " for size "+ size);
+
         return key
     }
 
@@ -500,6 +504,7 @@ function Montreur(){
     	var original_size =  Mot.getFontSize()
     	if(!this.visibilite){
     	    this.visibilite = this.calculateVisibility()
+	    this.visibilite_keys = sort_float_keys(this.visibilite);
     	}
     	//this.adjustAllToFontSize = globals.montreur.adjustAllToFontSize_optimized
         Mot.setFontSize(original_size)
@@ -571,7 +576,7 @@ function readSensor(){
 //    xmlHttp.open("GET","sonar")
     xmlHttp.open("GET","webcam_sonar")
 //    xmlHttp.open("GET","webcam")
-    xmlHttp.send(null)
+    xmlHttp.send()
 }
 
 function average (an_array){
@@ -610,6 +615,16 @@ function array_contains(a, obj) {
     return false;
   }
 
+function sort_float_keys(obj){
+    var keys = [];
+    for(var key in obj){
+        if(obj.hasOwnProperty(key))
+        {
+            keys.push(parseFloat(key));
+        }
+    }
+    return keys.sort().reverse();
+}
 
 function Background(){
 
@@ -728,7 +743,7 @@ function init(){
 
  globals.instruction = svghelper.createText("Appuyer 'D' pour démarrer",30,20,30)
  globals.instruction.setAttributeNS(null,"fill","white");
- globals.instruction.setAttributeNS(null,"text-anchor", "left")
+ globals.instruction.setAttributeNS(null,"text-anchor", "start")
  globals.instruction.setAttributeNS(null,"visibility","visible");
  
 
