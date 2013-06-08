@@ -1,0 +1,43 @@
+DEMARRAGE
+---------
+
+Après le démarrage de l'ordinateur:
+
+1. vérifier que la webcam fonctionne
+  Cliquer deux fois sur l'icone "vérifier la webcam"
+  Deux fenetres s'ouvrent.
+  La deuxieme affiche l'image de la webcam et met un cercle autour des visages qu'il reconnait.
+  Fermer les deux fenêtres.
+
+2. lancer le sonar
+  Ce pas est nécessaire pour que l'application puisse se connecter.
+  Fermer la fenêtre du sonar.
+
+3. lancer le serveur
+  Une fenêtre s'ouvre.
+  Il ne faut pas fermer la fenêtre, à moins de vouloir redémarrer le serveur.
+
+4. lancer firefox
+  Cliquer deux fois sur l'icone "firefox" du bureau.
+  Si l'image n'est pas en plein écran, taper F11.
+  
+
+
+
+CHOSES A REGLER
+---------------
+1. faire marcher le picoprojecteur
+   Actuellement il ne marche pas.
+   Je l'ai connecté par la rallonge et aussi sans passer par la rallonge en soulevant l'ordinateur.
+   Ce matin et hier ça marchait, je ne sais pas pourquoi ça ne marche plus
+
+2. si le projecteur ne marche pas, utiliser l'écran
+   poser la webcam dessus, mettre le sonar dessous
+
+3. régler la lumière
+   pour que la reconnaissance de visage marche bien c'est mieux d'éclairer les gens de face
+   mais sans les éblouir et en s'assurant qu'on voit quand meme bien ce qui est projeté.
+
+   pour tester la reconnaissance de visage, le plus simple est de cliquer deux fois sur l'icone
+   "verifier la webcam" sur le bureau.
+

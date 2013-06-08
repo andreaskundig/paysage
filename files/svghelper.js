@@ -52,6 +52,9 @@ function SvgHelper (){
 		    return rectElement
 	}
 	this.shapeSimpleRect = function (rectElement,x,y,width,height){
+	              if(isNaN(x) || isNaN(y) || isNaN(width) || isNaN(height)){
+			  console.error("one of x, y, width, height is not a number: " + x +", "+ y +", "+ width +", "+ height);
+		      }
 		      rectElement.setAttributeNS(null,"x",x)    
 		      rectElement.setAttributeNS(null,"y",y) 
 		      rectElement.setAttributeNS(null,"width",width) 

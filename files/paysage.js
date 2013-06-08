@@ -95,7 +95,14 @@ Mot.namevar = function(mot){
       Mot.varnames[name] = number
 }
 Mot.getFontSize = function (){return Mot.fontSize}
-Mot.setFontSize = function (size){Mot.fontSize = parseFloat(size)}
+Mot.setFontSize = function (size){
+    if(isNaN(size)){
+    }
+    Mot.fontSize = parseFloat(size);
+    if(isNaN(Mot.fontSize)){
+	console.error(size + " is not a number");
+    }
+}
 
 Mot.treeConstructionCode = function(mot,parentname){
       var indent = ""
@@ -640,10 +647,10 @@ function Background(){
   Mot.setFontSize(24)
 
   //empreinte
-  var empreinte = new Mot("L'EMPREINTE",0.51,0.488)
+  var empreinte = new Mot("L'EMPREINTE",0.48,0.492)
   empreinte.adjustToFontSize()
   empreinte.adjustToFontSize = null
-  var nez = new Mot("DE TON NEZ",0.51,0.535)
+  var nez = new Mot("DE TON NEZ",0.48,0.522)
   nez.adjustToFontSize()
   nez.adjustToFontSize = null
 
@@ -729,10 +736,10 @@ function init(){
  globals.totalWidth = 800
  globals.totalHeight = 500
  if(window.innerWidth){
-   globals.totalHeight = window.innerHeight
-   globals.totalWidth = window.innerHeight *  1024 / 768
-//   globals.totalWidth = window.screen.width
-//   globals.totalHeight = window.screen.height
+   // globals.totalHeight = window.innerHeight
+   // globals.totalWidth = window.innerHeight *  1024 / 768
+   globals.totalHeight = window.screen.height;
+   globals.totalWidth = window.screen.width;
  }
 
  back  = svghelper.createBlackRect(0,0,globals.totalWidth,globals.totalHeight)
