@@ -485,13 +485,16 @@ function Montreur(){
     
     this.find_visibilite_key_for_size  = function(size){
         var key = -1
-        for(var i in this.visibilite_keys){
-	    if(i>=size - 0.01 ){ key=i; }
+
+        for(var i = 0; i<this.visibilite_keys.length; i++){
+	    var currentKey = this.visibilite_keys[i]; 
+	    if(currentKey >= size){ 
+		key = currentKey;
+	    }
 	}
         if(key == -1){
-            for(var i in this.visibilite_keys){ key=i; break}
+            key = this.visibilite_keys[0]
         }
-	console.log("key "+ key + " for size "+ size);
 
         return key
     }
@@ -623,7 +626,13 @@ function sort_float_keys(obj){
             keys.push(parseFloat(key));
         }
     }
-    return keys.sort().reverse();
+    return keys.sort(float_order).reverse();
+}
+function float_order(a,b){ 
+    if(a === b){
+	return 0;
+    } 
+    return a < b ?  -1 :  1;
 }
 
 function Background(){
